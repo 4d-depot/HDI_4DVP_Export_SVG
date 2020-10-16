@@ -1,0 +1,299 @@
+﻿{
+	"destination": "detailScreen",
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 22,
+					"left": 23,
+					"width": 879,
+					"height": 679,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "_TabTitles",
+					"dataSourceTypeHint": "arrayText",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"information": {
+					"type": "input",
+					"top": 119,
+					"left": 51,
+					"width": 828,
+					"height": 560,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[0].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"method": "ObjectMethods/information.4dm"
+				}
+			},
+			"entryOrder": []
+		},
+		{
+			"objects": {
+				"PictViewPro": {
+					"type": "input",
+					"left": 40,
+					"top": 404,
+					"width": 845,
+					"height": 240,
+					"dataSource": "Form:C1466.displayPictViewPro",
+					"dataSourceTypeHint": "picture",
+					"method": "ObjectMethods/PictViewPro.4dm",
+					"printFrame": "fixed",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"fill": "transparent",
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"enterable": false,
+					"focusable": false,
+					"contextMenu": "none"
+				},
+				"Button1": {
+					"type": "button",
+					"text": "Print current document",
+					"top": 663,
+					"left": 650,
+					"width": 235,
+					"height": 29,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button1.4dm",
+					"sizingY": "move"
+				},
+				"Button3": {
+					"type": "button",
+					"text": "Print all documents in database",
+					"top": 663,
+					"left": 40,
+					"width": 235,
+					"height": 29,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button3.4dm",
+					"sizingY": "move"
+				},
+				"Check Box": {
+					"type": "checkbox",
+					"text": "Trace",
+					"top": 53,
+					"left": 722,
+					"width": 117,
+					"height": 18,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.trace"
+				},
+				"ViewProArea": {
+					"type": "view",
+					"left": 40,
+					"top": 111,
+					"width": 845,
+					"height": 273,
+					"userInterface": "none",
+					"withFormulaBar": false,
+					"right": 885,
+					"bottom": 384,
+					"sizingX": "grow",
+					"sizingY": "fixed",
+					"events": [
+						"onVPReady",
+						"onAfterEdit"
+					],
+					"method": "ObjectMethods/ViewProArea.4dm"
+				},
+				"Popup Dropdown List": {
+					"type": "dropdown",
+					"left": 722,
+					"top": 76,
+					"width": 163,
+					"height": 21,
+					"events": [
+						"onDataChange"
+					],
+					"method": "ObjectMethods/Popup Dropdown List.4dm",
+					"dataSource": "Documents"
+				},
+				"Text": {
+					"type": "text",
+					"text": "Document:",
+					"top": 79,
+					"left": 627,
+					"width": 89,
+					"height": 15,
+					"textAlign": "right"
+				},
+				"information1": {
+					"type": "input",
+					"top": 53,
+					"left": 40,
+					"width": 606,
+					"height": 64,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "Infos[1].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"method": "ObjectMethods/information1.4dm"
+				},
+				"Text1": {
+					"type": "text",
+					"text": "",
+					"top": 398,
+					"left": 43,
+					"width": 131,
+					"height": 15
+				},
+				"Button5": {
+					"type": "button",
+					"text": "Convert again",
+					"top": 663,
+					"left": 345,
+					"width": 235,
+					"height": 29,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Convert",
+					"method": "ObjectMethods/Button5.4dm",
+					"sizingX": "fixed",
+					"sizingY": "move"
+				}
+			}
+		},
+		{
+			"objects": {
+				"WriteProArea": {
+					"type": "write",
+					"left": 40,
+					"top": 111,
+					"width": 845,
+					"height": 555,
+					"events": [
+						"onDataChange",
+						"onSelectionChange",
+						"onAfterEdit"
+					],
+					"dataSource": "Form:C1466.WPArea",
+					"method": "ObjectMethods/WriteProArea.4dm",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"sizingX": "grow",
+					"sizingY": "grow"
+				},
+				"Check Box2": {
+					"type": "checkbox",
+					"text": "Trace",
+					"top": 53,
+					"left": 722,
+					"width": 117,
+					"height": 18,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.trace"
+				},
+				"Popup Dropdown List1": {
+					"type": "dropdown",
+					"left": 722,
+					"top": 76,
+					"width": 163,
+					"height": 21,
+					"events": [
+						"onDataChange"
+					],
+					"method": "ObjectMethods/Popup Dropdown List1.4dm",
+					"dataSource": "WPArea"
+				},
+				"Text2": {
+					"type": "text",
+					"text": "Document:",
+					"top": 79,
+					"left": 627,
+					"width": 89,
+					"height": 15,
+					"textAlign": "right"
+				},
+				"information2": {
+					"type": "input",
+					"top": 53,
+					"left": 40,
+					"width": 606,
+					"height": 64,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "Infos[2].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"method": "ObjectMethods/information2.4dm"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"windowMinWidth": 922
+}

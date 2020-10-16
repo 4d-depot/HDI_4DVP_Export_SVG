@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="HDI_4DVP_Export_SVG" uuid="2D4F6103DC084198BFC0283C03D0A0B2" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="INFO" uuid="107A367EBCC346259FD971E8FC1097DA" id="1">
+		<field name="ID" uuid="C6DBB917EEE44AF9BDA57ABA22C55C6B" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="Description" uuid="C9EFE648E9234AADA33FB25D61C0190B" type="10" never_null="true" id="2">
+			<field_extra position="4"/>
+		</field>
+		<field name="TabTitle" uuid="58AF214936C941439CB263026A5B46ED" type="10" limiting_length="255" never_null="true" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="PageNumber" uuid="A2D86BBFD5134D06999CBDD14FD07A27" type="4" never_null="true" id="4">
+			<field_extra position="2"/>
+		</field>
+		<primary_key field_name="ID" field_uuid="C6DBB917EEE44AF9BDA57ABA22C55C6B"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info fields_ordering="2" displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="25" top="39" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="(Examples)" uuid="3433B7E474498B40A07D8EFBD055B2CF" id="2" hide_in_REST="true">
+		<field name="ID" uuid="6D40E36D03C1F747BDEEF9FDD3386A55" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Monday" uuid="A34D291CC239BD4CA479B895E8020AEE" type="6" never_null="true" id="2"/>
+		<field name="Tuesday" uuid="7E0EC5E866914A4C94B6D3F5DE62CF8A" type="6" never_null="true" id="3"/>
+		<field name="Wednesday" uuid="7853DD1080E5F84E8C4369C9491D5E4E" type="6" never_null="true" id="4"/>
+		<field name="Thursday" uuid="11FD7BEDEB8BC5459B333772B41438DD" type="6" never_null="true" id="5"/>
+		<field name="Friday" uuid="E354AB00CCA2674FAA5B76A9D3F52598" type="6" never_null="true" id="6"/>
+		<field name="Saturday" uuid="E3F85E179DEEAA4D84482E95335182F1" type="6" never_null="true" id="7"/>
+		<field name="Sunday" uuid="4E490B1E2CD4284CA9CC2AC271DB7A95" type="10" limiting_length="255" never_null="true" id="8"/>
+		<primary_key field_name="ID" field_uuid="6D40E36D03C1F747BDEEF9FDD3386A55"/>
+		<table_extra trashed="true">
+			<editor_table_info displayable_fields_count="13">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="240" top="40" width="153" height="331.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Documents" uuid="CAA3A146385AF247B0B5FEEDCA71AB22" id="3">
+		<field name="ID" uuid="642FC89C62F0B448ABFA0BE06A22964F" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Content" uuid="3BCAF4C2D3B07342BFA71EEAC1567A82" type="21" blob_switch_size="2147483647" never_null="true" id="2"/>
+		<field name="Name" uuid="A7212EAF1C516B46A2567F7D457AFE72" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="IsLandscape" uuid="811429AD60BB4741A8463C8B973B2B9D" type="1" never_null="true" id="4"/>
+		<field name="BillFrom" uuid="F07AC4174330D24F9DA5A5556AA5F8FD" type="21" blob_switch_size="2147483647" never_null="true" id="5"/>
+		<field name="BillTo" uuid="2F57FBE8CEE573409CDF96BD2877AC51" type="21" blob_switch_size="2147483647" never_null="true" id="6"/>
+		<field name="InvoiceDate" uuid="C1145C6ED7AFAD43A198D1A13538EEE4" type="10" limiting_length="255" never_null="true" id="7"/>
+		<field name="DueDate" uuid="08B5D097FFB0294AAE251C8FF8116A49" type="10" limiting_length="255" never_null="true" id="8"/>
+		<primary_key field_name="ID" field_uuid="642FC89C62F0B448ABFA0BE06A22964F"/>
+		<table_extra output_form="Form2" input_form="Form1">
+			<editor_table_info displayable_fields_count="10">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="435" top="32" width="120" height="270.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<index kind="regular" uuid="07B4107DE306104293DD971B9D12DA3F" type="7">
+		<field_ref uuid="A34D291CC239BD4CA479B895E8020AEE" name="Monday">
+			<table_ref uuid="3433B7E474498B40A07D8EFBD055B2CF" name="(Examples)"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="2164DC69BA0412478C8925AB658B784A" type="7">
+		<field_ref uuid="642FC89C62F0B448ABFA0BE06A22964F" name="ID">
+			<table_ref uuid="CAA3A146385AF247B0B5FEEDCA71AB22" name="Documents"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="38C7E8E21BA2D24B8AE114D1136E0A41" type="7">
+		<field_ref uuid="6D40E36D03C1F747BDEEF9FDD3386A55" name="ID">
+			<table_ref uuid="3433B7E474498B40A07D8EFBD055B2CF" name="(Examples)"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="B17E3BF54450493DB72FBD48A5745784" type="7">
+		<field_ref uuid="C6DBB917EEE44AF9BDA57ABA22C55C6B" name="ID">
+			<table_ref uuid="107A367EBCC346259FD971E8FC1097DA" name="INFO"/>
+		</field_ref>
+	</index>
+	<base_extra __stringCompHash="icu:63.1.0" __keywordBuildingHash="icu:63.1.0" package_name="HDI_Template_v17" structure_file_name="HowDoI" data_file_path="\HowDoI.4DD">
+		<journal_file journal_file_enabled="false"/>
+	</base_extra>
+</base>
